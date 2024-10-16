@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter Key to Continue</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .container {
+      width: 80%;
+      margin: 40px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Enter Key to Continue</h1>
+    <p>Please enter the correct key to access the content.</p>
+    <input type="text" id="key" placeholder="Enter Key">
+    <button id="submit-btn">Submit</button>
+  </div>
+
+  <script>
+    const submitBtn = document.getElementById('submit-btn');
+    const keyInput = document.getElementById('key');
+
+    submitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const key = keyInput.value;
+
+      if (key === '2457') {
+        window.location.href = 'https://chatgpt.com/g/g-hz8Pw1quF-screenshot-to-code-gpt/c/670f58ba-3c08-8006-bdda-f8c07a17fb75'; // redirect to another web page
+      } else {
+        alert('Invalid key');
+      }
+    });
+  </script>
+</body>
+</html>
