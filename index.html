@@ -18,7 +18,8 @@
   <div class="container">
     <h1>Enter Key to Continue</h1>
     <p>Please enter the correct key to access the content.</p>
-    <input type="text" id="key" placeholder="Enter Key">
+    <!-- Change the input type to 'password' so the key is seen as dots -->
+    <input type="password" id="key" placeholder="Enter Key">
     <button id="submit-btn">Submit</button>
   </div>
 
@@ -26,14 +27,27 @@
     const submitBtn = document.getElementById('submit-btn');
     const keyInput = document.getElementById('key');
 
-    submitBtn.addEventListener('click', (e) => {
-      e.preventDefault();
+    // Function to check the key and redirect
+    function checkKey() {
       const key = keyInput.value;
-
-      if (key === '4321') {
-        window.location.href = 'https://onev1lol-t7m2.onrender.com'; // redirect to another web page
+      if (key === '3412') {
+        window.location.href = 'https://onev1lol-t7m2.onrender.com'; // Redirect to another web page
       } else {
         alert('Invalid key');
+      }
+    }
+
+    // Event listener for Submit button click
+    submitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      checkKey();
+    });
+
+    // Event listener for Enter key press
+    keyInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        checkKey();
       }
     });
   </script>
