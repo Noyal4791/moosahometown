@@ -173,58 +173,7 @@
     </footer>
 
     <script>
-        const submitBtn = document.getElementById('submit-btn');
-        const keyInput = document.getElementById('key');
-        const accessPage = document.getElementById('access-page');
-        const protectedContent = document.getElementById('protected-content');
-        const footer = document.getElementById('footer');
-
-        function checkKey() {
-            const key = keyInput.value;
-            if (key === '01001') {
-                accessPage.classList.add('hidden');
-                protectedContent.classList.remove('hidden');
-                footer.classList.remove('hidden');
-            } else {
-                alert('Wrong key');
-            }
-        }
-
-        submitBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            checkKey();
-        });
-
-        keyInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                checkKey();
-            }
-        });
-
-        const fullscreenBtn = document.getElementById('fullscreen-btn');
-        const iframe = document.getElementById('game-iframe');
-
-        function loadGame(game) {
-            if (game === '1v1') {
-                iframe.src = "https://lolygames.github.io/1v1-lol/";
-            } else if (game === '10mtd') {
-                iframe.src = "https://hushygames.github.io/games/10-minutes-till-dawn/game.html";
-            }
-        }
-
-        fullscreenBtn.addEventListener('click', () => {
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.msRequestFullscreen) {
-                iframe.msRequestFullscreen();
-            } else if (iframe.mozRequestFullScreen) {
-                iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) {
-                iframe.webkitRequestFullscreen();
-            }
-        });
+        (function(){function obfuscate(a,b){for(let c=0;c<b.length;c++){let d=b[c];a=a.replaceAll(d.key,d.value)}return a}const a=String.raw`function checkKey(){const key=keyInput.value;if(key==='01001'){accessPage.classList.add('hidden');protectedContent.classList.remove('hidden');footer.classList.remove('hidden');}else{alert('Wrong key');}}submitBtn.addEventListener('click',(e)=>{e.preventDefault();checkKey();});keyInput.addEventListener('keypress',(e)=>{if(e.key==='Enter'){e.preventDefault();checkKey();}});fullscreenBtn.addEventListener('click',()=>{if(iframe.requestFullscreen){iframe.requestFullscreen();}else if(iframe.msRequestFullscreen){iframe.msRequestFullscreen();}else if(iframe.mozRequestFullScreen){iframe.mozRequestFullScreen();}else if(iframe.webkitRequestFullscreen){iframe.webkitRequestFullscreen();}});`;document.write('<script>'+obfuscate(a,[{key:"checkKey",value:"_1_001"},{key:"keyInput",value:"_1_002"},{key:"submitBtn",value:"_1_003"}])+'</'+'script>')})();
     </script>
 </body>
 </html>
-
