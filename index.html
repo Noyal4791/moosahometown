@@ -173,7 +173,6 @@
     </footer>
 
     <script>
-        // References to elements
         const accessPage = document.getElementById('access-page');
         const protectedContent = document.getElementById('protected-content');
         const footer = document.getElementById('footer');
@@ -188,20 +187,17 @@
             footer.classList.remove('hidden');
         }
 
-        // Event listener for key combinations
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && e.key === '7') { 
                 unlockAccess();
             }
         });
 
-        // Key input field functionality
         function checkKey() {
             alert("This input field is not functional for unlocking the content.");
             keyInput.value = ""; // Clear the input
         }
-
-        // Fullscreen button functionality
+    
         fullscreenBtn.addEventListener('click', () => {
             if (iframe.requestFullscreen) {
                 iframe.requestFullscreen();
@@ -214,7 +210,6 @@
             }
         });
 
-        // Game loader function
         function loadGame(game) {
             if (game === '1v1') {
                 iframe.src = 'https://lolygames.github.io/1v1-lol/';
