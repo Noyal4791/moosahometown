@@ -8,7 +8,7 @@
     <!-- Open Graph Tags for Social Media Previews -->
     <meta property="og:title" content="Access Page" />
     <meta property="og:description" content="Enter the correct key to access the content. 🔐" />
-    <meta property="og:image" content="https://media.discordapp.net/attachments/1075992899466039411/1314961831202394132/2b4129ed-fcd4-4269-b1db-5a47ad6d274d.png?ex=6757a763&is=675655e3&hm=b9170a983cab5bfb7d3141058f50129f69dfcb82b249e212a87a1d42cdedcf6d&=&format=webp&quality=lossless&width=422&height=422" />
+    <meta property="og:image" content="https://media.discordapp.net/attachments/1075992899466039411/1314961831202394132/2b4129ed-fcd4-4269-b1db-5a47ad6d274d.png" />
     <meta property="og:url" content="https://moosahometown.site" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Access Page by noyal.7 🔑" />
@@ -48,7 +48,7 @@
             margin-bottom: 1.5rem;
         }
 
-        input[type="password"] {
+        input[type="text"] {
             width: 100%;
             padding: 0.75rem;
             margin-bottom: 1rem;
@@ -150,7 +150,9 @@
 <body>
     <div class="container" id="access-page">
         <h1>Enter Key to Continue</h1>
-        <p>Press Ctrl + 5 to unlock the content.</p>
+        <p>Please enter the correct key to access the content.</p>
+        <input type="password" id="key" placeholder="Enter Key">
+        <button id="submit-btn">Submit</button>
     </div>
 
     <div class="container hidden" id="protected-content">
@@ -177,7 +179,9 @@
         const footer = document.getElementById('footer');
         const iframe = document.getElementById('game-iframe');
         const fullscreenBtn = document.getElementById('fullscreen-btn');
-         // KEY= "01001"
+        const keyInput = document.getElementById('key-input');
+
+        // KEY= "01001"
         function unlockAccess() {
             accessPage.classList.add('hidden');
             protectedContent.classList.remove('hidden');
@@ -186,10 +190,16 @@
 
         // Event listener for key combinations
         document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === '7') { // 
+            if (e.ctrlKey && e.key === '7') { 
                 unlockAccess();
             }
         });
+
+        // Key input field functionality
+        function checkKey() {
+            alert("This input field is not functional for unlocking the content.");
+            keyInput.value = ""; // Clear the input
+        }
 
         // Fullscreen button functionality
         fullscreenBtn.addEventListener('click', () => {
